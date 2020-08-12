@@ -107,6 +107,10 @@ public class BasePage {
 
     /********* Botao ************/
 
+    public void clicarBotaoTexto(String texto){
+        clicarBotao(By.xpath("//button[.='"+ texto +"']"));
+    }
+
     public void clicarBotao(By by){
         getDriver().findElement(by).click();
     }
