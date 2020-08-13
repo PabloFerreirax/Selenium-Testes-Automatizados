@@ -21,8 +21,8 @@ public class MovimentacaoTeste extends BaseTeste {
     public void testInserirMovi(){
         menuPage.acessarTelaInserirMovi();
 
-        moviPage.setDataMovimentacao("30/07/2020");
-        moviPage.setDataPagamento("05/08/2020");
+        moviPage.setDataMovimentacao(data.obertDataFormatada(new Date()));
+        moviPage.setDataPagamento(data.obertDataFormatada(new Date()));
         moviPage.setDescricao("Teste Descricao");
         moviPage.setInteressado("aaaa");
         moviPage.setValor("10000");

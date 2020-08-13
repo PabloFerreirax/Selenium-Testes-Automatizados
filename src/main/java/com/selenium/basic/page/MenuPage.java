@@ -17,5 +17,9 @@ public class MenuPage extends BasePage {
     public void acessarTelaInserirMovi(){
         clicarLink("Criar Movimentação");
     }
+
+    public void acessarTelaResumo(){
+        clicarLink("Resumo Mensal");
+    }
 }
 
