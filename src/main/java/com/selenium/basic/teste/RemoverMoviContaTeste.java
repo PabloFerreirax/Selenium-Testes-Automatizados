@@ -6,6 +6,8 @@ import com.selenium.basic.page.MenuPage;
 import org.junit.Assert;
 import org.junit.Test;
 
+import static com.selenium.basic.core.Propriedades.NOME_CONTA_ALTERADA;
+
 public class RemoverMoviContaTeste extends BaseTeste {
 
     private MenuPage menuPage = new MenuPage();
@@ -14,7 +16,7 @@ public class RemoverMoviContaTeste extends BaseTeste {
     @Test
     public void testExcluirContaComMovi(){
         menuPage.acessarTelaListasConta();
-        contasPage.clicaBotaoExcluir("ContaAlterada");
+        contasPage.clicaBotaoExcluir(NOME_CONTA_ALTERADA);
         Assert.assertEquals("Conta em uso na movimentações", contasPage.obterMensagemErro());
     }
 }

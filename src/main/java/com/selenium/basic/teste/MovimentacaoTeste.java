@@ -14,6 +14,8 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
+import static com.selenium.basic.core.Propriedades.NOME_CONTA_ALTERADA;
+
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MovimentacaoTeste extends BaseTeste {
     private MenuPage menuPage = new MenuPage();
@@ -29,7 +31,7 @@ public class MovimentacaoTeste extends BaseTeste {
         moviPage.setDescricao("Teste Descricao");
         moviPage.setInteressado("aaaa");
         moviPage.setValor("10000");
-        moviPage.setConta("ContaAlterada");
+        moviPage.setConta(NOME_CONTA_ALTERADA);
         moviPage.setSituacaoPago();
         moviPage.salvar();
         Assert.assertEquals("Movimentação adicionada com sucesso!", moviPage.obterMensagemSucesso());
@@ -67,7 +69,7 @@ public class MovimentacaoTeste extends BaseTeste {
         moviPage.setDescricao("Teste Descricao");
         moviPage.setInteressado("aaaa");
         moviPage.setValor("10000");
-        moviPage.setConta("ContaAlterada");
+        moviPage.setConta(NOME_CONTA_ALTERADA);
         moviPage.setSituacaoPago();
         moviPage.salvar();
 

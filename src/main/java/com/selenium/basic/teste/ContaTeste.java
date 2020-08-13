@@ -10,6 +10,8 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
+import static com.selenium.basic.core.Propriedades.NOME_CONTA_ALTERADA;
+
 @FixMethodOrder(MethodSorters.NAME_ASCENDING) //ordem alfabetica
 public class ContaTeste extends BaseTeste {
 
@@ -27,8 +29,9 @@ public class ContaTeste extends BaseTeste {
     @Test
     public void test2AlterarConta() {
         menuPage.acessarTelaListasConta();
+
         contasPage.clicaBotaoAlterar("ContaNova");
-        contasPage.setNome("ContaAlterada");
+        contasPage.setNome(NOME_CONTA_ALTERADA);
         contasPage.salvar();
         Assert.assertEquals("Conta alterada com sucesso!", contasPage.obterMensagemSucesso());
     }
@@ -36,7 +39,7 @@ public class ContaTeste extends BaseTeste {
     @Test
     public void test3InserirMesmaContal(){
         menuPage.acessarTelaInserirConta();
-        contasPage.setNome("ContaAlterada");
+        contasPage.setNome(NOME_CONTA_ALTERADA);
         contasPage.salvar();
         Assert.assertEquals("Já existe uma conta com esse nome!", contasPage.obterMensagemErro());
     }
