@@ -5,17 +5,20 @@ import com.selenium.basic.core.DriverFactory;
 import com.selenium.basic.page.MenuPage;
 import com.selenium.basic.page.ResumoPage;
 import org.junit.Assert;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import static com.selenium.basic.core.DriverFactory.getDriver;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class ResumoTeste extends BaseTeste {
 
     private ResumoPage resumoPage = new ResumoPage();
     private MenuPage menuPage = new MenuPage();
 
     @Test
-    public void removerMovi(){
+    public void test1RemoverMovi(){
         menuPage.acessarTelaResumo();
 
         resumoPage.removerMovi();
@@ -23,7 +26,7 @@ public class ResumoTeste extends BaseTeste {
     }
 
     @Test
-    public void testResumoMensal(){
+    public void test2ResumoMensal(){
         menuPage.acessarTelaResumo();
         Assert.assertEquals("Seu Barriga - Extrato", getDriver().getTitle());
     }

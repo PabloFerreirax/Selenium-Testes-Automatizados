@@ -6,19 +6,22 @@ import com.selenium.basic.page.MovimentacaoPage;
 import com.selenium.basic.utils.DataUtils;
 import org.apache.tools.ant.util.DateUtils;
 import org.junit.Assert;
+import org.junit.FixMethodOrder;
 import org.junit.Test;
+import org.junit.runners.MethodSorters;
 
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MovimentacaoTeste extends BaseTeste {
     private MenuPage menuPage = new MenuPage();
     private MovimentacaoPage moviPage = new MovimentacaoPage();
     private DataUtils data = new DataUtils();
 
     @Test
-    public void testInserirMovi(){
+    public void test1InserirMovi(){
         menuPage.acessarTelaInserirMovi();
 
         moviPage.setDataMovimentacao(data.obertDataFormatada(new Date()));
@@ -33,7 +36,7 @@ public class MovimentacaoTeste extends BaseTeste {
     }
 
     @Test
-    public void testCampoObrigatorio(){
+    public void test2CampoObrigatorio(){
         menuPage.acessarTelaInserirMovi();
         moviPage.salvar();
         List<String> erros = moviPage.obterErros();
@@ -54,7 +57,7 @@ public class MovimentacaoTeste extends BaseTeste {
     }
 
     @Test
-    public void inserirMoviFutura(){
+    public void test3InserirMoviFutura(){
         menuPage.acessarTelaInserirMovi();
 
         Date dataFutura = data.obterDataComDiferencaDias(5);

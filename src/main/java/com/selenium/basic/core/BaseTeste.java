@@ -24,10 +24,7 @@ public class BaseTeste {
 
     @Before
     public void inicializa(){
-        loginPage.acessarTelaInicial();
-        loginPage.setEmail("pablo@pablo");
-        loginPage.setSenha("123456");
-        loginPage.clicaBotaoEntrar();
+
     }
     @After
     public void finaliza() throws IOException {
